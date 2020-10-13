@@ -1,5 +1,102 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* End Fonts */
+
+/* General Styles */
+
 * {
     margin: 0;
-    padding: 0;
-    font-family: Quicksand;
+    font-family: 'Quicksand', sans-serif;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table.friends tbody tr:nth-child(even) td:not(:nth-child(1)), table.leaderboard tbody tr:nth-child(even) td:not(:nth-child(1)){
+    background-color: #CEA07E;
+}
+table.friends tbody tr:nth-child(odd) td:not(:nth-child(1)), table.leaderboard tbody tr:nth-child(odd) td:not(:nth-child(1)){
+    background-color: #F5C9A8
+}
+table.friends tbody tr td{
+    height: 30px;
+    position: relative;
+
+    font-weight: bold;
+    font-size: 20px;
+    /* padding-left: 20px; */
+    text-align: center;
+}
+table.friends tbody tr td:nth-child(1){
+    width: 50px;
+    font-size: 14px;
+}
+table.friends tbody tr td:nth-child(1)::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 0 solid transparent;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+table.friends tbody tr td:nth-child(1)::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 0px solid transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0; 
+}
+table.friends tbody tr:nth-child(even) td:nth-child(1)::after, 
+table.friends tbody tr:nth-child(even) td:nth-child(1)::before{
+    border-right: 35px solid #CEA07E;
+}
+table.friends tbody tr:nth-child(odd) td:nth-child(1)::after, 
+table.friends tbody tr:nth-child(odd) td:nth-child(1)::before{
+    border-right: 35px solid #F5C9A8;
+}
+
+table.friends {
+    margin: 5rem 0 !important;
+    padding: 0 1rem;
+    border-radius: 25px !important;
+}
+
+.friends-container{
+    width: 100%; 
+    overflow: auto; 
+    background-color: #671B16; 
+    max-height: 75%; 
+    border-radius: 25px;
+}
+
+.pagetitle {
+    float: left;
+}
+
+.navigation {
+    float: right;
+}
+
+.table td{
+    border: 0 !important;
+}
+
+.table.leaderboard {
+    margin: 1rem 0 !important;
+}
+
+.friendsbody{
+    background-color: #CEA07E;
+}
+
+/* End General Styles */

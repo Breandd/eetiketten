@@ -1,0 +1,186 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrienden</title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body class="friendsbody">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Eet-iketten</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="#">Home</a>
+            <a class="p-2 text-dark" href="#">Link</a>
+            <a class="p-2 text-dark" href="#" id="login">Login</a>
+            <a class="p-2 text-dark" href="friends.html">Friends</a>
+        </nav>
+    </div>
+    <div class="container friends-container d-flex justify-content-center">
+        <table class="friends" style="width: 90%">
+            <tr>
+                <td>🟢</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td width="50%">500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🟢</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🟢</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🟢</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🟢</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🟢</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>🔴</td>
+                <td>15</td>
+                <td>Timon</td>
+                <td>500</td>
+                <td><img src="images/chat.png" /></td>
+                <td>...</td>
+            </tr>
+        </table>
+    </div>
+    <div class="container mt-3">
+        <h3>Vrienden toevoegen!</h3>
+        <form action="" id="addFriends">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email</span>
+                </div>
+                <input type="email" id="form_email" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Voeg toe</button>
+        </form>
+
+    </div>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDJtYDNa3AHGYCv8AZtGywPMIR-AECSyRo",
+          authDomain: "eet-iketten.firebaseapp.com",
+          databaseURL: "https://eet-iketten.firebaseio.com",
+          projectId: "eet-iketten",
+          storageBucket: "eet-iketten.appspot.com",
+          messagingSenderId: "849022267672",
+          appId: "1:849022267672:web:6c7514fffd5be42965ae6d"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.firestore();
+      </script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

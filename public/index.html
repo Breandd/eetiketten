@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eet-iketten</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-performance.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eet-iketten</title>
 
-    <link type="stylesheet" rel="css/styles.css">
-  </head>
-  <body>
-    <header>
-      <h1>Eet-iketten</h1>
-    <nav>
-      <a href="" id="login">Login</a>
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Eet-iketten</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="#">Home</a>
+      <a class="p-2 text-dark" href="#">Link</a>
+      <a class="p-2 text-dark" href="#" id="login">Login</a>
+      <a class="p-2 text-dark" href="leaderboard.html">Leaderboard</a>
+      <a class="p-2 text-dark" href="friends.html">Friends</a>
     </nav>
-  </header>
+  </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12 d-flex flex-column align-items-center">
+        <h1 class="text-center">Welkom bij Eet-iketten</h1>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique vestibulum auctor. Praesent
+          vitae facilisis nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada
+          fames ac ante ipsum primis in faucibus. Integer luctus est ultricies lectus volutpat malesuada. Proin
+          sollicitudin nibh sed leo ornare, non fringilla purus volutpat. Sed placerat felis eget quam maximus, in
+          tincidunt nisl lobortis. Maecenas interdum, diam non imperdiet laoreet, ante augue lobortis purus, ut tempus
+          urna augue a mi. Sed tincidunt molestie diam, gravida semper urna sodales lacinia. Proin eros eros, dignissim
+          sed dictum eget, elementum eu urna. Integer ultricies vehicula ante, ut mollis purus. In erat metus, venenatis
+          dapibus justo id, vestibulum vestibulum enim. Praesent fringilla augue ante, sit amet cursus urna lobortis sit
+          amet. Phasellus molestie nisi tortor, quis tincidunt nunc eleifend a. Aenean libero tortor, placerat vel
+          tellus id, pellentesque suscipit orci. Aliquam nec ante eu purus placerat vehicula.
+        </p>
+        <a href="#" class="btn btn-success text-center w-25">Speel nu</a>
+      </div>
+    </div>
+  </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 
   <script>
-    const auth = firebase.auth()
-    const provider = new firebase.auth.GoogleAuthProvider();
-
-    document.getElementById("login").addEventListener('click', (e) => {
-        auth.signInWithPopup(provider).then((result) => {
-          const token = result.credential.accessToken
-          const user = result.user
-        }).catch((error) => {
-            // ERROR
-            console.log(error)
-        })
-    })
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDJtYDNa3AHGYCv8AZtGywPMIR-AECSyRo",
+      authDomain: "eet-iketten.firebaseapp.com",
+      databaseURL: "https://eet-iketten.firebaseio.com",
+      projectId: "eet-iketten",
+      storageBucket: "eet-iketten.appspot.com",
+      messagingSenderId: "849022267672",
+      appId: "1:849022267672:web:6c7514fffd5be42965ae6d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore();
+    let user = firebase.auth().currentUser
   </script>
-  </body>
+
+
+  <script src="js/index.js"></script>
+</body>
+
 </html>
