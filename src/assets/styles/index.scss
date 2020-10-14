@@ -1,0 +1,114 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* End Fonts */
+
+/* General Styles */
+
+* {
+  font-family:
+    'Quicksand',
+    sans-serif;
+  margin: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.table td {
+  border: 0 !important;
+}
+
+.friends tbody td {
+  font-size: 20px;
+  font-weight: bold;
+  height: 30px;
+  position: relative;
+
+  /* padding-left: 20px; */
+  text-align: center;
+}
+
+.friends tbody tr td:nth-child(1) {
+  font-size: 14px;
+  width: 50px;
+}
+
+.friends tbody tr:nth-child(even) td:not(:nth-child(1)),
+.leaderboard tbody tr:nth-child(even) td:not(:nth-child(1)) {
+  background-color: #cea07e;
+}
+
+.friends tbody tr:nth-child(odd) td:not(:nth-child(1)),
+.leaderboard tbody tr:nth-child(odd) td:not(:nth-child(1)) {
+  background-color: #f5c9a8;
+}
+
+.friends tbody tr td:nth-child(1)::before {
+  border-bottom: 15px solid transparent;
+  border-top: 0 solid transparent;
+  content: '';
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+}
+
+.friends tbody tr td:nth-child(1)::after {
+  border-bottom: 0 solid transparent;
+  border-top: 15px solid transparent;
+  bottom: 0;
+  content: '';
+  height: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+.friends tbody tr:nth-child(even) td:nth-child(1)::after,
+.friends tbody tr:nth-child(even) td:nth-child(1)::before {
+  border-right: 35px solid #cea07e;
+}
+
+.friends tbody tr:nth-child(odd) td:nth-child(1)::after,
+.friends tbody tr:nth-child(odd) td:nth-child(1)::before {
+  border-right: 35px solid #f5c9a8;
+}
+
+.friends {
+  border-radius: 25px !important;
+  margin: 5rem 0 !important;
+  padding: 0 1rem;
+}
+
+.friends-container {
+  background-color: #671b16;
+  border-radius: 25px;
+  max-height: 75%;
+  overflow: auto;
+  width: 100%;
+}
+
+.pagetitle {
+  float: left;
+}
+
+.navigation {
+  float: right;
+}
+
+.table .leaderboard {
+  margin: 1rem 0 !important;
+}
+
+.friendsbody {
+  background-color: #cea07e;
+}
+
+/* End General Styles */
