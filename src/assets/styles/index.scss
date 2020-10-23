@@ -11,6 +11,7 @@
     'Quicksand',
     sans-serif;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -24,6 +25,12 @@ body {
   border: 0 !important;
 }
 
+.friends {
+  border-radius: 25px !important;
+  margin: 5rem 0 !important;
+  padding: 0 1rem;
+}
+
 .friends tbody td {
   font-size: 20px;
   font-weight: bold;
@@ -32,11 +39,51 @@ body {
 
   /* padding-left: 20px; */
   text-align: center;
+  cursor: default;
+}
+
+.friends .individual-friend {
+  display: block;
+}
+
+.friends .individual-friend td:not(.status) {
+  padding-left: 25px;
+}
+
+.friends .individual-friend td:nth-child(1) {
+  width: 5%;
+}
+
+.friends .individual-friend td:nth-child(3) {
+  width: 270px;
+  min-width: 200px;
+}
+
+.friends .individual-friend td:nth-child(4) {
+  width: 36%;
+  text-align: start;
+}
+
+.friends .individual-friend td:nth-child(5) {
+  text-align: end;
+}
+
+.friends .individual-friend td:nth-child(6) {
+  text-align: start;
+}
+
+.friends .individual-friend td:nth-child(5),
+.friends .individual-friend td:nth-child(6) {
+  width: 15%;
+}
+
+.friends .status {
+  padding-right: 10px;
 }
 
 .friends tbody tr td:nth-child(1) {
   font-size: 14px;
-  width: 50px;
+  // width: 50px;
 }
 
 .friends tbody tr:nth-child(even) td:not(:nth-child(1)),
@@ -53,21 +100,21 @@ body {
   border-bottom: 15px solid transparent;
   border-top: 0 solid transparent;
   content: '';
-  height: 0;
   position: absolute;
   right: 0;
   top: 0;
+  height: 0;
   width: 0;
 }
 
 .friends tbody tr td:nth-child(1)::after {
   border-bottom: 0 solid transparent;
   border-top: 15px solid transparent;
-  bottom: 0;
   content: '';
-  height: 0;
   position: absolute;
   right: 0;
+  bottom: 0;
+  height: 0;
   width: 0;
 }
 
@@ -81,18 +128,16 @@ body {
   border-right: 35px solid #f5c9a8;
 }
 
-.friends {
-  border-radius: 25px !important;
-  margin: 5rem 0 !important;
-  padding: 0 1rem;
-}
-
 .friends-container {
   background-color: #671b16;
   border-radius: 25px;
   max-height: 75%;
   overflow: auto;
   width: 100%;
+}
+
+.friendsbody {
+  background-color: #cea07e;
 }
 
 .pagetitle {
@@ -103,12 +148,147 @@ body {
   float: right;
 }
 
-.table .leaderboard {
-  margin: 1rem 0 !important;
-}
-
-.friendsbody {
+.section-inner {
   background-color: #cea07e;
+  height: calc(100vh - 77px);
+  padding-top: 50px;
 }
 
 /* End General Styles */
+
+/* Leaderboard styles */
+
+.table th {
+  border-top: 0;
+}
+
+.leaderboard {
+  margin: 1rem 0 !important;
+}
+
+.leaderboard tr td {
+  font-weight: bold !important;
+  font-size: 18px;
+  padding: 5px 15px;
+}
+
+.leaderboard td:nth-child(1) {
+  color: #fff;
+  width: 150px;
+}
+
+.leaderboard-background {
+  flex-flow: column;
+}
+
+.position p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.position {
+  background: #895127;
+  border-radius: 200px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.leaderboard-background hr {
+  border-top: 1px solid #000;
+}
+
+// .message-container {
+//   width: 100%;
+// }
+
+.message-container {
+  display: flex;
+  width: 100%;
+  flex-flow: row;
+}
+
+.message-container.send,
+.message-container.receive {
+  position: relative;
+}
+
+.message-container.send {
+  justify-content: flex-end;
+}
+
+.message-container.receive {
+  justify-content: flex-start;
+}
+
+.message-container.send::after {
+  border-top: 0 solid transparent;
+  border-bottom: 15px solid transparent;
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  border-right: 15px solid #9c5f4a;
+  border-left: 15px solid transparent;
+}
+
+.message-container.receive::after {
+  border-top: 0 solid transparent;
+  border-bottom: 15px solid transparent;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -14px;
+  border-right: 15px #fff solid;
+}
+
+.message {
+  max-width: 360px;
+  padding: 10px;
+}
+
+.message-container.send .message {
+  border-radius: 10px 10px 0;
+}
+
+.message-container.receive .message {
+  border-radius: 0 10px 10px;
+}
+
+.message i {
+  font-size: 12px;
+  float: right;
+}
+
+.message-form-container {
+  padding: 20px;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.message-form {
+  position: relative;
+}
+
+.message-input {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  padding-left: 20px;
+}
+
+.message-btn {
+  position: absolute;
+  right: 20px;
+  top: 12.5px;
+  border-radius: 20px;
+  background-color: none;
+  font-size: 15px;
+  font-weight: bold;
+  width: 50px;
+}
+
+/* End Leaderbord styles */
