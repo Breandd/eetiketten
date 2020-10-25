@@ -17,6 +17,7 @@ const Navigation = () => {
                     <Link to="/login" className="p-2 text-dark">Login</Link>
                 }
                 <Link to="/leaderboard" className="p-2 text-dark">Leaderboard</Link>
+                <Link to="/rules" className="p-2 text-dark">Rules</Link>
                 <Link to="/friends" className="p-2 text-dark">Friends</Link>
                 {currentUser && <Link to="/chat" className="p-2 text-dark">Chat</Link>}          
             </nav>
