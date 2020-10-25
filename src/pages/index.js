@@ -15,6 +15,7 @@ import {AuthProvider} from "./auth"
 import Login from "./login"
 import Register from "./register"
 import PrivateRoute from "./PrivateRoute"
+import Game from "./game"
 
 const Router = () => {
     return (
@@ -33,6 +34,9 @@ const Router = () => {
                     </PrivateRoute>
                     <Route path="/rules">
                         <Rules/>
+                    </Route>
+                    <Route path="/game">
+                        <Game />
                     </Route>
                     <Route path="/login">
                         <Login/>
