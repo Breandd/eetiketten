@@ -7,7 +7,7 @@ const Leaderbord = () => {
             <div className="shareicon">
                 <Link to="/"><img src={require("../../assets/images/share.png")} alt="Share button" className="float-right mr-5" /></Link>
             </div>
-            <img className="mx-auto d-block w-5" src={require("../../assets/images/wreath_1.png")} />
+            <img className="mx-auto d-block w-5" src={require("../../assets/images/wreath_1.png")} alt="leaderbord" />
             <div className="container d-flex justify-center pb-2 rounded mt-2 leaderboard-background"
                 style={{ width: "100%", overflow: "auto", backgroundColor: "#671B16" }}>
                 <hr />

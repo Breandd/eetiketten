@@ -12,10 +12,12 @@ class Game extends React.Component {
 
         this.db = app.database()
         this.plantFarm = this.plantFarm.bind(this)
+        this.updateColors = this.updateColors.bind(this)
     }
 
 
     async componentDidMount () {
+        setInterval(() => this.updateColors(), 1000)
         try {
             this.db.ref('farms').on("value", snapshot => {
                 let farms = {}
@@ -42,13 +44,13 @@ class Game extends React.Component {
     handleClick (e, index) {
         const farmFields = document.getElementsByClassName("gameField")
 
-        if (index in this.state.farms) {
+        if (this.state.farms && index in this.state.farms) {
             if (this.getPlantedTime(this.state.farms[index].plantedOn) > 15) {
-                farmFields[index].classList.remove("border-success")
+                farmFields[index].className = "gameField"
                 this.db.ref("farms").child(this.state.farms[index].key).remove()
             }
         } else if (this.state.user) {
-            farmFields[index].classList.add("border-info")
+            farmFields[index].className = "gameField border-info"
             this.plantFarm(index)
         }
     }
@@ -91,71 +93,95 @@ class Game extends React.Component {
 
     getPlantedTime (plantedOn) {
         const now = Date.now()
-        return Math.ceil(Math.abs(now - plantedOn) / (1000 * 60))
+        return Math.ceil(Math.abs(now - plantedOn) / (1000))
+    }
+
+    updateColors () {
+        const farmFields = document.getElementsByClassName("gameField")
+
+        if (this.state.farms) {
+            for (let x = 0; x < farmFields.length; x++) {
+                if (this.state.farms[x] && this.getPlantedTime(this.state.farms.plantedOn) > 15) {
+                    const farm = this.state.farms[x]
+                    
+                    farmFields[farm.index].className = "gameField"
+                    console.log(farmFields[farm.index].className)
+                    farmFields[farm.index].classList.add(this.getColor(farm.plantedOn))
+                }
+            }
+        }
     }
 
     render () {
         this.state.farms && this.setFieldState()
+
         return (
-            <div className="container d-flex flex-wrap">
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-                <div className="gameField"></div>
-            </div>
+            <>
+                <div className="container d-flex flex-wrap">
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                    <div className="gameField"></div>
+                </div>
+                
+                <div className="explanation">
+                    
+                </div>
+
+            </>
         )
     }
 }

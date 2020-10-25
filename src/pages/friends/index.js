@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Link } from 'react-router-dom'
 
 const Friends = () => {
     const [data, setData] = useState([]);
@@ -30,22 +31,22 @@ const Friends = () => {
                 <table className="friends" style={{ width: "95%" }}>
                     <tbody style={{ display: 'block', height: '384px', overflow: 'auto' }}>
                         {
-                            loaded == true ?
+                            loaded ?
                                 data.map((item, index) => {
                                     return (
-                                        <tr class="individual-friend" key={index}>
-                                            <td class="status"><span role="img" aria-label="Online status">{ index < 12 ? "🟢" : "🔴"}</span></td>
+                                        <tr className="individual-friend" key={index}>
+                                            <td className="status"><span role="img" aria-label="Online status">{ index < 12 ? "🟢" : "🔴"}</span></td>
                                             <td>{index + 1}</td>
                                             <td>{item.name.first}</td>
                                             <td><img src={require("../../assets/images/money.png")} alt="Currency Icon" />&nbsp;{Math.floor(item.dob.age * Math.random() * 50)}</td>
-                                            <td><img onClick={() => console.log(`Chat Function ${index + 1}`)} src={require("../../assets/images/chat.png")} alt="Chat Icon" /></td>
-                                            <td><b onClick={() => console.log(`Options ${index + 1}`)}>&bull;&bull;&bull;</b></td>
+                                            <td><Link to="/chat" className="text-dark"><i className="fas fa-comments"></i></Link></td>
+                                            <td><i className="fas fa-ellipsis-h"></i></td>
                                         </tr>
                                     )
                                 })
                                 :
-                                <tr style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%"}}>
-                                    <h1 style={{ color: 'white' }}>Loading...</h1>
+                                <tr className="loading" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%"}}>
+                                    <td><h1 style={{ color: 'white' }}>Loading...</h1></td>
                                 </tr>
                         }
                     </tbody>
