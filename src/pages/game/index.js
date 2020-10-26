@@ -50,7 +50,7 @@ class Game extends React.Component {
                 this.db.ref("farms").child(this.state.farms[index].key).remove()
             }
         } else if (this.state.user) {
-            farmFields[index].className = "gameField border-info"
+            farmFields[index].className = "gameField"
             this.plantFarm(index)
         }
     }
@@ -78,14 +78,14 @@ class Game extends React.Component {
 
     getColor (plantedOn) {
         const diff = this.getPlantedTime(plantedOn)
-        let setClass = "border-";
+        let setClass = "";
 
         if (diff > 10 && diff < 15) {
-            setClass += "warning"
+            setClass += "growing"
         } else if (diff > 15) {
-            setClass += "success"
+            setClass += "harvest"
         } else {
-            setClass += "info"
+            setClass += "seeds"
         }
 
         return setClass
@@ -116,7 +116,7 @@ class Game extends React.Component {
         this.state.farms && this.setFieldState()
 
         return (
-            <>
+            <section className="section-inner game-section">
                 <div className="container d-flex flex-wrap">
                     <div className="gameField"></div>
                     <div className="gameField"></div>
@@ -177,11 +177,13 @@ class Game extends React.Component {
                     <div className="gameField"></div>
                 </div>
                 
-                <div className="explanation">
-                    
+                <div className="explanation container mt-3">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies eros vitae augue ornare hendrerit. Morbi nec felis dui. Ut auctor a ipsum ac suscipit. Suspendisse dui elit, ultrices vitae magna non, iaculis mollis odio. Integer ac magna vitae sapien tincidunt viverra sed ac lacus. Vestibulum lacinia, ipsum vel finibus venenatis, arcu arcu pretium nulla, quis suscipit purus eros et ante. Donec viverra commodo cursus. Maecenas ligula est, congue ut massa at, sagittis lobortis magna.
+                    </p>
                 </div>
 
-            </>
+            </section>
         )
     }
 }

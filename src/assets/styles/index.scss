@@ -285,7 +285,7 @@ body {
   right: 20px;
   top: 12.5px;
   border-radius: 20px;
-  background-color: none;
+  background-color: transparent;
   font-size: 15px;
   font-weight: bold;
   width: 50px;
@@ -296,7 +296,9 @@ body {
 /* Start rules styles */
 
 .rules-section {
-  background: #b8e1ff;
+  background: url('../../assets/images/bg_rules.png') no-repeat bottom left;
+  background-color: #b8e1ff;
+  background-size: contain;
 }
 
 /* End rules styles */
