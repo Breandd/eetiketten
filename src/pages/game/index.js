@@ -116,7 +116,8 @@ class Game extends React.Component {
         this.state.farms && this.setFieldState()
 
         return (
-            <section className="section-inner game-section">
+            <section className="section-inner game-section text-center">
+                <h1>Eet-iketten Game</h1>
                 <div className="container d-flex flex-wrap">
                     <div className="gameField"></div>
                     <div className="gameField"></div>
@@ -179,7 +180,7 @@ class Game extends React.Component {
                 
                 <div className="explanation container mt-3">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies eros vitae augue ornare hendrerit. Morbi nec felis dui. Ut auctor a ipsum ac suscipit. Suspendisse dui elit, ultrices vitae magna non, iaculis mollis odio. Integer ac magna vitae sapien tincidunt viverra sed ac lacus. Vestibulum lacinia, ipsum vel finibus venenatis, arcu arcu pretium nulla, quis suscipit purus eros et ante. Donec viverra commodo cursus. Maecenas ligula est, congue ut massa at, sagittis lobortis magna.
+                        Hierboven vind je de velden om te beginnen met spelen. Klik op een leeg vakje om zaadjes te planten, na een tijdje groeien de plantjes. Wanneer de plantjes volledig gegroeid zijn kan je ze oogsten om vervolgens nieuwe zaadjes te planten.
                     </p>
                 </div>
 

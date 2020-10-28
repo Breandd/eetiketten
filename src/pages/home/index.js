@@ -1,43 +1,28 @@
 import React from 'react';
 import './home.scss';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function Index() {
-  return (
-    <section className="section-inner">
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-12 d-flex flex-column align-items-center">
-            <h1 className="text-center">Welkom bij Eet-iketten</h1>
-            <p className="text-center py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique vestibulum
-              auctor. Praesent
-              vitae facilisis nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et
-              malesuada
-              fames ac ante ipsum primis in faucibus. Integer luctus est ultricies lectus volutpat malesuada.
-              Proin
-              sollicitudin nibh sed leo ornare, non fringilla purus volutpat. Sed placerat felis eget quam
-              maximus, in
-              tincidunt nisl lobortis. Maecenas interdum, diam non imperdiet laoreet, ante augue lobortis
-              purus, ut tempus
-              urna augue a mi. Sed tincidunt molestie diam, gravida semper urna sodales lacinia. Proin eros
-              eros, dignissim
-              sed dictum eget, elementum eu urna. Integer ultricies vehicula ante, ut mollis purus. In erat
-              metus, venenatis
-              dapibus justo id, vestibulum vestibulum enim. Praesent fringilla augue ante, sit amet cursus
-              urna lobortis sit
-              amet. Phasellus molestie nisi tortor, quis tincidunt nunc eleifend a. Aenean libero tortor,
-              placerat vel
-              tellus id, pellentesque suscipit orci. Aliquam nec ante eu purus placerat vehicula.
-                </p>
-            <Link to="/game" className="btn btn-success text-center w-25">Speel nu</Link>
+    return (
+        <section className="section-inner">
+            <div className="container mt-5">
+                <div className="row">
+                    <div className="col-12 d-flex flex-column align-items-center">
+                        <h1 className="text-center">Welkom bij Eet-iketten</h1>
+                        <p className="text-center py-3">
+                            Dit is een prototype voor het team Ratje. Op deze site vind je de game, leaderboard, vriendenlijst, login pagina en chatfunctie.
+                            Om te beginnen met spelen moet je inloggen dit doe je door op de groene knop rechtboven te klikken. Hier kan je inloggen met Google of met een bestaand account inloggen.
+                            Wanneer je dit hebt gedaan kan je chatten met andere spelers door op <i className="fas fa-comments" /> te klikken. Verder kan je ook de game spelen door op
+                          <i className="fas fa-gamepad" /> te klikken.
+                        </p>
+                        <Link to="/game" className="btn btn-success text-center w-25">Speel nu</Link>
 
-            {/* <button className="btn btn-success text-center w-25">Speel nu</button> */}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                        {/* <button className="btn btn-success text-center w-25">Speel nu</button> */}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }
 
 export default Index;

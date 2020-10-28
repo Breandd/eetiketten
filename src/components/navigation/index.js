@@ -11,7 +11,7 @@ const Navigation = () => {
             <Link to="/" className="my-0 mr-md-auto font-weight-normal h5">Eet-iketten</Link>
             <nav className="my-2 my-md-0 mr-md-3">
                 <Link to="/" className="p-2 text-dark"><i className="fas fa-home"></i></Link>
-                <Link to="/game" className="p-2 text-dark"><i className="fas fa-gamepad" /></Link>
+                {currentUser && <Link to="/game" className="p-2 text-dark"><i className="fas fa-gamepad" /></Link>}
                 <Link to="/leaderboard" className="p-2 text-dark"><i className="fas fa-medal" /></Link>
                 <Link to="/friends" className="p-2 text-dark"><i className="fas fa-user-friends" /></Link>
                 {currentUser && <Link to="/chat" className="p-2 text-dark"><i className="fas fa-comments" /></Link>}
